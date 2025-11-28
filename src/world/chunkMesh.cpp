@@ -237,6 +237,8 @@ void World::generateNextMesh()
     chunksToMeshQueue.pop_front();
     queue_mtx.unlock();
 
+    std::cout << "Generating chunk mesh: " << pos.x << ", " << pos.z << std::endl;
+
     ChunkMesh chunkMesh;
     chunkMesh.pos = pos;
     chunkMesh.isInitialized = false;
@@ -288,6 +290,7 @@ void World::generateNextMesh()
 
     std::unique_lock<std::mutex> mesh_lock(mesh_mtx);
     chunkMeshMap[pos] = chunkMesh;
+    std::cout << "SUCCESSFUL: Generated chunk mesh: " << pos.x << ", " << pos.z << std::endl;
 }
 
 void World::initializeTransparentChunk(ChunkMesh &chunkMesh)

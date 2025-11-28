@@ -276,9 +276,6 @@ int main(void)
         ImGui::Text("Currently Selected Block: %s", blockNames[allowedBlocks[currBlockIdx]].c_str());
         ImGui::End();
 
-        if (!world->intialDataGenerated)
-            continue;
-
         frameCount++;
 
         ChunkPos playerChunkPos = player->getChunkPos();

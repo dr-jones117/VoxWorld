@@ -330,6 +330,7 @@ void World::generateChunkData(ChunkPos pos)
     std::lock_guard<std::mutex> lock(data_mtx);
     generateStructures(data, pos);
     chunkDataMap[pos] = data;
+    std::cout << "Generated chunk data at: " << pos.x << ", " << pos.z << std::endl;
 }
 
 std::vector<char> &World::getChunkDataIfExists(ChunkPos pos)

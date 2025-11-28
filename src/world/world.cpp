@@ -14,9 +14,7 @@
 void World::init()
 {
     focusMesh.init();
-    // TODO: fix this call, 0, 0? what if theyre not at spawn. dumbass...
-    generateChunkDataFromPos({0, 0}, true);
-    intialDataGenerated = true;
+    worldCurrPos = {0, 0};
 }
 
 BLOCK World::getBlockData(glm::ivec3 blockPos)

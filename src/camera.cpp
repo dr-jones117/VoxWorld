@@ -187,25 +187,29 @@ void Camera::tick(float currentTime)
     RayCastInfo rayInfoZNeg = {*world, cameraPos, glm::vec3(0.001f, 0.001f, -0.998f), rayDist, doNothingIfHit};
     RayCastInfo rayInfoZNegLow = {*world, glm::vec3(cameraPos.x, cameraPos.y - height, cameraPos.z), glm::vec3(0.001f, 0.001f, -0.998f), rayDist, doNothingIfHit};
 
-    if (shoot_ray(rayInfoYNeg) || shoot_ray(rayInfoYNeg2) || shoot_ray(rayInfoYNeg3) || shoot_ray(rayInfoYNeg4))
-    {
-        yNegHit = true;
-    }
-    if (shoot_ray(rayInfoXPosLow) || shoot_ray(rayInfoXPos))
-    {
-        xPosHit = true;
-    }
-    if (shoot_ray(rayInfoXNeg) || shoot_ray(rayInfoXNegLow))
-    {
-        xNegHit = true;
-    }
-    if (shoot_ray(rayInfoZNeg) || shoot_ray(rayInfoZNegLow))
-    {
-        zNegHit = true;
-    }
-    if (shoot_ray(rayInfoZPos) || shoot_ray(rayInfoZPosLow))
-    {
-        zPosHit = true;
+    try {
+        if (shoot_ray(rayInfoYNeg) || shoot_ray(rayInfoYNeg2) || shoot_ray(rayInfoYNeg3) || shoot_ray(rayInfoYNeg4))
+        {
+            yNegHit = true;
+        }
+        if (shoot_ray(rayInfoXPosLow) || shoot_ray(rayInfoXPos))
+        {
+            xPosHit = true;
+        }
+        if (shoot_ray(rayInfoXNeg) || shoot_ray(rayInfoXNegLow))
+        {
+            xNegHit = true;
+        }
+        if (shoot_ray(rayInfoZNeg) || shoot_ray(rayInfoZNegLow))
+        {
+            zNegHit = true;
+        }
+        if (shoot_ray(rayInfoZPos) || shoot_ray(rayInfoZPosLow))
+        {
+            zPosHit = true;
+        }
+    } catch (const std::exception& e) {
+        std::cout << "Error: " << e.what() << std::endl;
     }
 
     if (isJumping && yNegHit)
