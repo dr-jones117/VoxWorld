@@ -268,7 +268,7 @@ int main(void)
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
         // Create an ImGui window for displaying the FPS
-        ImGui::SetNextWindowSize(ImVec2(400.0f, 200.0f));
+        ImGui::SetNextWindowSize(ImVec2(450.0f, 200.0f));
         ImGui::Begin("Voxworld Alpha 0.0.1");
         ImGui::Text("FPS: %.1f", fps); // Display the FPS
         auto playerPos = player->getPos();
