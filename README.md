@@ -1,14 +1,15 @@
 # VoxWorld
-A Minecraft Clone Built using C++ and OpenGL
+A Cross Platform Minecraft Clone Built using C++ and OpenGL
 
 ## What's Included
 * Infinite multi threaded chunk generation
+  * Chunk terrain generation fueld by Perlin Noise Library
 * Breaking & Placing Blocks
 * Player physics (jumping, breaking blocks, sprinting)
 * Beach, Mountain, and Plains Biomes
 * Infinite Build Height
 
-I'm using minecrafts assets right now. I'll be switching to my own once I get further into the project.
+Note: I'm using minecrafts assets right now. I'll be switching to my own once I get further into the project.
 
 
 
@@ -39,10 +40,16 @@ Book I used to help me get through this project:
 ## Build
 Note: Clone recursivly to get the nested libraries.
 
+
+
 #### Linux
-```
+```bash
 cd path/of/voxwrld
 mkdir build && cd build && cmake .. && cmake --build .
 ```
+
+### Windows
+Same as Linux but you'll need to manually move the res folder to the same directory as the exe for now.
+
 
 
