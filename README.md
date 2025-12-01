@@ -3,10 +3,16 @@ A Minecraft Clone Built using C++ and OpenGL
 
 ## What's Included
 * Infinite multi threaded chunk generation
-* Breakable blocks
+* Breaking & Placing Blocks
 * Player physics (jumping, breaking blocks, sprinting)
+* Beach, Mountain, and Plains Biomes
+* Infinite Build Height
 
 I'm using minecrafts assets right now. I'll be switching to my own once I get further into the project.
+
+
+
+https://github.com/user-attachments/assets/96a1f883-6b7f-4fee-a927-a7e6f299ac52
 
 
 
